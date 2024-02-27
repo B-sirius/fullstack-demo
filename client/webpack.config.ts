@@ -23,7 +23,7 @@ const config: Configuration = {
         loader: "ts-loader",
       },
       {
-        test: /\.module.css$/,
+        test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
