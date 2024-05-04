@@ -2,6 +2,7 @@
 
 version: '3.8'
 services:
+  # Postgres container
   postgres:
     image: postgres:15
     restart: always
@@ -12,6 +13,8 @@ services:
       - postgres:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+
+  # pgAdmin container
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin4_container
@@ -23,6 +26,25 @@ services:
       PGADMIN_DEFAULT_PASSWORD: strong-password
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+
+  # nestjs container
+  nestjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '8000:8000'
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USER: myuser
+      DATABASE_PASSWORD: mypassword
+      DATABASE_NAME: mydb
+      DATABASE_URL: 'postgresql://myuser:mypassword@postgres:5432/mydb?schema=public'
+
 volumes:
   postgres:
   pgadmin-data:
