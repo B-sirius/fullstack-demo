@@ -14,18 +14,14 @@ jobs:
     environment: dev
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
-
       - name: Publish Docker image to Docker Hub
         uses: docker/build-push-action@v2
         with:
           context: ./server
           push: true
-          tags: test-fullstack-server:latest
+          tags: joebanana7/test-fullstack-server:latest
