@@ -22,6 +22,6 @@ jobs:
       - name: Publish Docker image to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: ./server
+          context: "{{defaultContext}}:server"
           push: true
           tags: joebanana7/test-fullstack-server:latest
