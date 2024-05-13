@@ -1,11 +1,6 @@
-name: Build and Push Server Docker Image
+name: Build and Push Seed Docker Image
 
 on:
-  push:
-    branches:
-      - dev
-    paths:
-      - "server/**" # Monitor changes in the server folder
   workflow_dispatch:
 
 jobs:
@@ -23,6 +18,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: "{{defaultContext}}:server"
-          file: "{context}/Dockerfile.server"
+          file: "{context}/Dockerfile.seed"
           push: true
-          tags: joebanana7/test-fullstack-server:latest
+          tags: joebanana7/test-fullstack-seed:latest
