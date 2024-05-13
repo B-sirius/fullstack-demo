@@ -23,6 +23,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: "{{defaultContext}}:server"
-          file: "./server/Dockerfile.server"
+          file: "./Dockerfile.server"
           push: true
           tags: joebanana7/test-fullstack-server:latest
