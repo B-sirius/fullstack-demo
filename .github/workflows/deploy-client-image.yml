@@ -1,4 +1,4 @@
-name: Deploy Server Image to Azure App Service
+name: Deploy Client Image to Azure App Service
 
 on:
   workflow_dispatch:
