@@ -19,9 +19,9 @@ export default function HeaderUser() {
     <div className={styles.user}>
       <Link to={"/user"}>{name}</Link>
       <span className={styles.bar}>|</span>
-      <a href="javascript:;" onClick={logout}>
-        logout
-      </a>
+      <Link to={"/create"}>create polling</Link>
+      <span className={styles.bar}>|</span>
+      <a onClick={logout}>logout</a>
     </div>
   );
 }

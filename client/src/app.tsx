@@ -5,6 +5,7 @@ import Login from "./routes/login";
 import Register from "./routes/register";
 import User from "./routes/user";
 import PollingDetail from "./routes/pollingDetail";
+import CreatePolling from './routes/createPolling'
 import "./app.css";
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/user",
     element: <User />,
+  },
+  {
+    path: "/create",
+    element: <CreatePolling />,
   },
   {
     path: "/polling/:pollingId",

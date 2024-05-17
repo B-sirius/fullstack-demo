@@ -33,68 +33,9 @@ async function main() {
     },
   });
 
-  const likes1 = await prisma.like.upsert({
-    where: { id: 1 },
-    update: {},
-    create: {
-      voteId: 1,
-      userId: 1,
-    },
-  });
-
-  const likes2 = await prisma.like.upsert({
-    where: { id: 1 },
-    update: {},
-    create: {
-      voteId: 1,
-      userId: 2,
-    },
-  });
-
-  const vote1 = await prisma.vote.upsert({
-    where: { id: 1 },
-    update: {
-      authorId: user1.id,
-    },
-    create: {
-      title: 'Playstation 5',
-      description: `It's the latest game console from Sony`,
-      authorId: user1.id,
-    },
-  });
-
-  const vote2 = await prisma.vote.upsert({
-    where: { id: 2 },
-    update: {
-      authorId: user1.id,
-    },
-    create: {
-      title: 'Xbox Series X',
-      description: `It's the latest game console from Microsoft`,
-      authorId: user1.id,
-    },
-  });
-
-  const vote3 = await prisma.vote.upsert({
-    where: { id: 3 },
-    update: {
-      authorId: user2.id,
-    },
-    create: {
-      title: 'Nintendo Switch',
-      description: `It's the latest game console from Nintendo`,
-      authorId: user2.id,
-    },
-  });
-
   console.log({
     user1,
     user2,
-    likes1,
-    likes2,
-    vote1,
-    vote2,
-    vote3,
   });
 }
 

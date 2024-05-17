@@ -9,9 +9,9 @@ type VoteRes = {
   authorId: number;
   likeCount: number;
   liked: boolean;
-}[];
+};
 export const getVotes = async () =>
-  (await customAxios.get<VoteRes>("/votes")).data;
+  (await customAxios.get<VoteRes[]>("/votes")).data;
 
 export const upvote = async (voteId: number) =>
   (
@@ -26,3 +26,14 @@ export const unvote = async (voteId: number) =>
       voteId,
     })
   ).data;
+
+export const createVote = async (title: string, description: string) => {
+  await customAxios.post("/votes/create", {
+    title,
+    description,
+  });
+}
+
+export const getVoteDetail = async (voteId: number) => {
+  return (await customAxios.get<VoteRes>(`/votes/${voteId}`)).data;
+}

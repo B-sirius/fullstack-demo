@@ -48,3 +48,7 @@
 .bar {
   padding: 0 5px;
 }
+
+.empty {
+  text-align: center;
+}

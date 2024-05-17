@@ -58,5 +58,13 @@ export default function List() {
     </div>
   );
 
-  return <div className={styles.container}>{list.map(renderListItem)}</div>;
+  return (
+    <div className={styles.container}>
+      {
+        list.length
+          ? list.map(renderListItem)
+          : <div className={styles.empty}>No polls available</div>
+      }
+    </div>
+  );
 }
