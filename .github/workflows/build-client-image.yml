@@ -24,4 +24,4 @@ jobs:
         with:
           context: "{{defaultContext}}:client"
           push: true
-          tags: ${{ env.CLIENT_IMAGE }}:latest
+          tags: "${{ env.CLIENT_IMAGE }}:latest"
