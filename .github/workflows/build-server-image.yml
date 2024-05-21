@@ -25,4 +25,4 @@ jobs:
           context: "{{defaultContext}}:server"
           file: "./Dockerfile.server"
           push: true
-          tags: "${{ env.SERVER_IMAGE }}:latest"
+          tags: "${{ vars.SERVER_IMAGE }}:latest"
