@@ -15,4 +15,4 @@ jobs:
           app-name: "test-fullstack-client"
           slot-name: "production"
           publish-profile: ${{ secrets.AZURE_CLIENT_PUBLISH_PROFILE }}
-          images: "index.docker.io/${{ env.CLIENT_IMAGE }}:latest"
+          images: "index.docker.io/${{ vars.CLIENT_IMAGE }}:latest"
