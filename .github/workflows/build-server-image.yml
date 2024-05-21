@@ -25,4 +25,4 @@ jobs:
           context: "{{defaultContext}}:server"
           file: "./Dockerfile.server"
           push: true
-          tags: joebanana7/test-fullstack-server:latest
+          tags: ${{ env.SERVER_IMAGE }}:latest
