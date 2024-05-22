@@ -29,11 +29,11 @@ And database will start at port `5432`
 
 And server will start at port `8000`
 
-### Init database
+### Migrate database
 
 **Under `server` path**
 
-To make the app functional, we need to init the database, creating the tables we need.
+To make the app functional, we need to migrate the database, creating the tables we need.
 
 ```
 yarn migrate
