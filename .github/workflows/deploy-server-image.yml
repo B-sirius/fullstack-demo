@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Install Dependencies
+        working-directory: ./server
+        run: yarn
+
       - name: Apply all pending migrations to the database
         working-directory: ./server
         run: npx prisma migrate deploy
