@@ -15,5 +15,5 @@ jobs:
         with:
           app-name: "test-fullstack"
           slot-name: "production"
-          publish-profile: ${{ secrets.AZURE_CLIENT_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZURE_NGINX_PUBLISH_PROFILE }}
           images: "index.docker.io/${{ vars.NGINX_IMAGE }}:latest"
