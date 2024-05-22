@@ -19,6 +19,7 @@ jobs:
           node-version: '18'
 
       - name: Apply all pending migrations to the database
+        working-directory: ./server
         run: npx prisma migrate deploy
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
