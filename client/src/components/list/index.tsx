@@ -4,6 +4,7 @@ import { ListItem, useListStore } from "@/stores/voteListStore";
 import { upvote, unvote } from "@/services/votes";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import triangle from "@/assets/triangle.svg";
 import styles from "./index.module.css";
 
 dayjs.extend(relativeTime);
@@ -36,7 +37,7 @@ export default function List() {
         <div className={`${styles.voteIconWrapper} flex-center pointer`}>
           {!item.liked ? (
             <img
-              src="/triangle.svg"
+              src={triangle}
               className={styles.voteArrow}
               onClick={handleVote(item.id)}
             />
@@ -60,11 +61,11 @@ export default function List() {
 
   return (
     <div className={styles.container}>
-      {
-        list.length
-          ? list.map(renderListItem)
-          : <div className={styles.empty}>No polls available</div>
-      }
+      {list.length ? (
+        list.map(renderListItem)
+      ) : (
+        <div className={styles.empty}>No polls available</div>
+      )}
     </div>
   );
 }

@@ -37,6 +37,10 @@ const config: Configuration = {
           },
         ],
       },
+      {
+        test: /\.svg/,
+        type: 'asset/resource'
+      }
     ],
   },
   plugins: [
