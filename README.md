@@ -1,4 +1,4 @@
-# Fullstack Test
+# Fullstack Demo
 
 ## Local setup
 
@@ -38,3 +38,7 @@ To make the app functional, we need to migrate the database, creating the tables
 ```
 yarn migrate
 ```
+
+### Visit the client
+
+After all services started, visit `http://localhost:3000` to see the page.
